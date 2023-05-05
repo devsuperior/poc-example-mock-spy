@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "f2646d30-a777-4ddc-9b2c-be815849f528",
+		"name": "Mock Spy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26227222",
+		"_collection_link": "https://dsjavaspring-poc.postman.co/workspace/Team-Workspace~8553e0d4-55f5-4f55-836e-cf672f1cc504/collection/26227222-f2646d30-a777-4ddc-9b2c-be815849f528?action=share&creator=26227222&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "New product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Me\",\n    \"price\": 200.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Produto atualizado\",\n    \"price\": 200.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
