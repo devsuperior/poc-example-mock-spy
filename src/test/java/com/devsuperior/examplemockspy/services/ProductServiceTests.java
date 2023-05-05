@@ -51,7 +51,7 @@ public class ProductServiceTests {
 		ProductService serviceSpy = Mockito.spy(service);
 		Mockito.doNothing().when(serviceSpy).validateData(productDTO);
 		
-		ProductDTO result = service.insert(productDTO);
+		ProductDTO result = serviceSpy.insert(productDTO);
 		
 		Assertions.assertNotNull(result);
 		Assertions.assertEquals(result.getName(), "Playstation");
@@ -67,7 +67,7 @@ public class ProductServiceTests {
 		
 		Assertions.assertThrows(InvalidDataException.class, () -> {
 	    	@SuppressWarnings("unused")
-	    	ProductDTO result = service.insert(productDTO);
+	    	ProductDTO result = serviceSpy.insert(productDTO);
 		});
 	}
 	
@@ -81,7 +81,7 @@ public class ProductServiceTests {
 		
 		Assertions.assertThrows(InvalidDataException.class, () -> {
 	    	@SuppressWarnings("unused")
-	    	ProductDTO result = service.insert(productDTO);
+	    	ProductDTO result = serviceSpy.insert(productDTO);
 		});
 	}
 	
@@ -91,7 +91,7 @@ public class ProductServiceTests {
 		ProductService serviceSpy = Mockito.spy(service);
 		Mockito.doNothing().when(serviceSpy).validateData(productDTO);
 		
-		ProductDTO result = service.update(existingProductId, productDTO);
+		ProductDTO result = serviceSpy.update(existingProductId, productDTO);
 		
 		Assertions.assertNotNull(result);
 		Assertions.assertEquals(result.getId(), existingProductId);	
@@ -107,7 +107,7 @@ public class ProductServiceTests {
 		
 		Assertions.assertThrows(InvalidDataException.class, () -> {
 	    	@SuppressWarnings("unused")
-	    	ProductDTO result = service.update(existingProductId, productDTO);
+	    	ProductDTO result = serviceSpy.update(existingProductId, productDTO);
 		});	
 	}
 	
@@ -121,7 +121,7 @@ public class ProductServiceTests {
 
 		Assertions.assertThrows(InvalidDataException.class, () -> {
 	    	@SuppressWarnings("unused")
-	    	ProductDTO result = service.update(existingProductId, productDTO);
+	    	ProductDTO result = serviceSpy.update(existingProductId, productDTO);
 		});	
 	}
 	
@@ -132,7 +132,7 @@ public class ProductServiceTests {
 		Mockito.doNothing().when(serviceSpy).validateData(productDTO);
 		
 		Assertions.assertThrows(ResourceNotFoundException.class, () -> {
-			service.update(nonExistingProductId, productDTO);
+			ProductDTO result = serviceSpy.update(nonExistingProductId, productDTO);
 		});	
 	}
 	
@@ -146,7 +146,7 @@ public class ProductServiceTests {
 
 		
 		Assertions.assertThrows(InvalidDataException.class, () -> {
-			service.update(nonExistingProductId, productDTO);
+			ProductDTO result = serviceSpy.update(nonExistingProductId, productDTO);
 		});	
 	}
 	
@@ -160,7 +160,7 @@ public class ProductServiceTests {
 
 		
 		Assertions.assertThrows(InvalidDataException.class, () -> {
-			service.update(nonExistingProductId, productDTO);
+			ProductDTO result = serviceSpy.update(nonExistingProductId, productDTO);
 		});	
 	}	
 }
